@@ -1,7 +1,9 @@
-select d.name as Department , e.name as Employee , salary as Salary
-from (select *,dense_rank() OVER (PARTITION BY departmentId ORDER BY salary DESC) roe
-from Employee ) e, Department d
-where e.departmentId = d.id and 
-e.roe <=3
+# Write your MySQL query statement below
 
+with ans as (select d.name as Department,e.name as Employee,e.salary as Salary,
+dense_rank() over(partition by departmentId order by salary desc) as dr
+from Employee e
+join Department d
+on e.departmentId = d.id)
 
+select Department, Employee, Salary from ans where dr <4
