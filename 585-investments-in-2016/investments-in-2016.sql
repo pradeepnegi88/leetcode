@@ -2,7 +2,6 @@
 with ans as (select *,
 dense_rank() over( order by tiv_2015 ) as dr,
 count(tiv_2015) over( partition by tiv_2015 order by tiv_2015 ) as c,
-concat(lat,lon) as latlan,
 count(concat(lat,lon)) over( partition by lat,lon order by lat,lon ) as ll
 from Insurance)
 
