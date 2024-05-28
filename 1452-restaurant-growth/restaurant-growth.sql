@@ -11,5 +11,5 @@ from g)
 
 select visited_on,s as amount ,a as average_amount
 from f
-where visited_on >= (select min(visited_on) as visited_on from f )+6
+where visited_on >= (select  visited_on from f limit 1 )+6
 order by visited_on
