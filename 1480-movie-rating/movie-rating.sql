@@ -21,7 +21,3 @@ union all
  where mon = 2 and ag = (select max(ag) from a where mon = 2)
  order by title 
  limit 1);
-
-
--- select  * from a where mon = 2
-
