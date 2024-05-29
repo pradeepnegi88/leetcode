@@ -1,6 +1,5 @@
 with a as (
     select 
-        mr.*, 
         m.title, 
         u.name, 
         count(*) over(partition by u.name order by u.name) as ct,
@@ -25,3 +24,4 @@ union all
 
 
 -- select  * from a where mon = 2
+
