@@ -10,11 +10,16 @@ class Solution(object):
         #     if nums[i] == nums[i-1]:
         #         return True
         # return False      
-        s = set()
-        for i in  nums:
-            if i in s:
-                return True
-            s.add(i)
-        return False                
+        # s = set()
+        # for i in  nums:
+        #     if i in s:
+        #         return True
+        #     s.add(i)
+        # return False    
+        s = set(nums)
+        if len(s) < len(nums):
+            return True
+        else:
+            return False                
 
         
