@@ -5,10 +5,16 @@ class Solution(object):
         #         if nums[i] == nums[j]:
         #             return True
         # return False      
-        nums = sorted(nums)
-        for i in range(1, len(nums)):
-            if nums[i] == nums[i-1]:
+        # nums = sorted(nums)
+        # for i in range(1, len(nums)):
+        #     if nums[i] == nums[i-1]:
+        #         return True
+        # return False      
+        s = set()
+        for i in  nums:
+            if i in s:
                 return True
-        return False              
+            s.add(i)
+        return False                
 
         
